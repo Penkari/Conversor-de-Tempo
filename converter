@@ -1,0 +1,41 @@
+unis = ['hora', 'minuto', 'segundo', 'milissegundo']
+user = uni = esco = 0
+while user <= 0:
+    user = float(input('Quanto tempo você quer converter?(sem a unidade de tempo): '))
+while uni != 1 and uni != 2 and uni != 3:
+    uni = int(input('Qual a unidade de tempo?\n[ 1 ]Hora\n[ 2 ]Minuto\n[ 3 ]Segundo\n-> '))
+while esco != 1 and esco != 2 and esco != 3 and esco != 4:
+    esco = int(input('Converter para:\n[ 1 ]Hora\n[ 2 ]Minuto\n[ 3 ]Segundo\n[ 4 ]Milissegundo\n-> '))
+tempo = user
+if uni == 1:
+    if esco == 1:
+        user = user
+    elif esco == 2:
+        user *= 60
+    elif esco == 3:
+        user *= 3600
+    else:
+        user *= 3600000
+elif uni == 2:
+    if esco == 1:
+        user /= 60
+    elif esco == 2:
+        user = user
+    elif esco == 3:
+        user *= 60
+    else:
+        user *= 60000
+else:
+    if esco == 1:
+        user /= 3600
+    elif esco == 2:
+        user /= 60
+    elif esco == 3:
+        user = user
+    else:
+        user *= 1000
+if user != 1:
+    print(f'{tempo} {unis[uni-1]}s equivalem a {user} {unis[esco-1]}s')
+else:
+    print(f'{tempo} {unis[uni-1]} equivale a 1 {unis[esco-1]}')
+input('===== Fim do Programa =====')
